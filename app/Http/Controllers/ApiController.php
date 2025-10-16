@@ -45,4 +45,32 @@ class ApiController extends Controller
 
         return $request->get("{$this->apiBaseUrl}{$endpoint}");
     }
+
+    /**
+     * Helper to make a PUT request easily.
+     */
+    protected function put($endpoint, $data = [], $token = null)
+    {
+        $request = Http::withHeaders([
+            'Accept' => 'application/json',
+        ]);
+
+        if ($token) {
+            $request->withToken($token);
+        }
+
+        return $request->put("{$this->apiBaseUrl}{$endpoint}", $data);
+    }
+
+    protected function delete($endpoint, $token = null)
+{
+    $request = Http::withHeaders(['Accept' => 'application/json']);
+
+    if ($token) {
+        $request->withToken($token);
+    }
+
+    return $request->delete("{$this->apiBaseUrl}{$endpoint}");
+}
+
 }
