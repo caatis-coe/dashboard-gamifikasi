@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UsersManagementController extends ApiController
 {
@@ -16,7 +17,24 @@ class UsersManagementController extends ApiController
             return redirect('/dashboard')->withErrors(['error' => 'Unable to fetch users list.']);
         }
 
-        $users = $response->json();
+        $allUsers = $response->json() ?: [];
+
+        // paginate locally at 5 items per page
+        $perPage = 5;
+        $currentPage = $request->input('page', 1);
+        $collection = collect($allUsers);
+        $currentItems = $collection->forPage($currentPage, $perPage)->values()->all();
+
+        $users = new LengthAwarePaginator(
+            $currentItems,
+            $collection->count(),
+            $perPage,
+            $currentPage,
+            [
+                'path' => url()->current(),
+                'query' => $request->query(),
+            ]
+        );
 
         return view('Users.users', compact('users'));
     }
