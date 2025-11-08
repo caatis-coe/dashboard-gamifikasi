@@ -10,7 +10,7 @@
                 <h1 class="text-3xl font-bold text-gray-800">Your Profile</h1>
                 {{-- Edit Profile Button --}}
                 <a href="{{ route('profile.edit') }}" 
-                   class="bg-lime-600 text-white px-4 py-2 rounded-lg hover:bg-lime-700 transition duration-200">
+                   class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-200">
                     Edit Profile
                 </a>
             </div>
@@ -39,7 +39,7 @@
                     <img 
                         src="{{ $user['avatar_url'] ?? 'https://ui-avatars.com/api/?name=' . urlencode($user['name']) }}" 
                         alt="Avatar" 
-                        class="w-32 h-32 rounded-full border-4 border-lime-500 mb-4">
+                        class="w-32 h-32 rounded-full border-4 border-green-500 mb-4">
                     <h2 class="text-2xl font-semibold text-gray-800">{{ $user['name'] }}</h2>
                     
                     <span class="mt-2 px-3 py-1 text-sm bg-gray-200 rounded-full text-gray-700">

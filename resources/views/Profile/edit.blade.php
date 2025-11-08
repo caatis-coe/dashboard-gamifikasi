@@ -39,12 +39,12 @@
                         <img 
                             src="{{ $user['avatar_url'] ?? 'https://ui-avatars.com/api/?name=' . urlencode($user['name']) }}" 
                             alt="Avatar" 
-                            class="w-32 h-32 rounded-full border-4 border-lime-500 mb-4">
+                            class="w-32 h-32 rounded-full border-4 border-green-500 mb-4">
                         <input 
                             type="url" 
                             name="avatar_url" 
                             value="{{ old('avatar_url', $user['avatar_url'] ?? '') }}" 
-                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+                            class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                             placeholder="Avatar URL (https://example.com/avatar.png)">
                     </div>
 
@@ -56,7 +56,7 @@
                                 type="text" 
                                 name="name" 
                                 value="{{ old('name', $user['name']) }}" 
-                                class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+                                class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required>
                         </div>
 
@@ -66,7 +66,7 @@
                                 type="text" 
                                 name="username" 
                                 value="{{ old('username', $user['username']) }}" 
-                                class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-lime-500 focus:outline-none"
+                                class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-green-500 focus:outline-none"
                                 required>
                         </div>
 
@@ -98,7 +98,7 @@
                     </a>
                     <button 
                         type="submit"
-                        class="bg-lime-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-lime-700 transition duration-200">
+                        class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition duration-200">
                         Save Changes
                     </button>
                 </div>

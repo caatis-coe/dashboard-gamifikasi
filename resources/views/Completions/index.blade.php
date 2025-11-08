@@ -77,7 +77,7 @@
                                         <span class="
                                             @if($status === 'completed' || $status === 'approved') text-green-600 font-semibold
                                             @elseif($status === 'rejected') text-red-600 font-semibold
-                                            @else text-yellow-600
+                                            @else text-red-600
                                             @endif">
                                             {{ ucfirst($status) ?: 'Pending' }}
                                         </span>
