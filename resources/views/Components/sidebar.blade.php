@@ -1,6 +1,6 @@
 <aside class="w-64 bg-white text-gray-800 min-h-screen flex flex-col rounded-xl shadow-lg">
-    <div class="p-6 flex items-center space-x-3">
-        <span class="text-xl font-bold">Tulang Bawang</span>
+    <div class="p-6 flex items-center">
+        <img src="{{ asset('images/logo web.png') }}" class="w-16 h-16 object-cover rounded-md">
     </div>
 
     <nav class="flex-1 p-6">

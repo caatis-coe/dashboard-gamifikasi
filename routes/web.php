@@ -7,6 +7,7 @@ use App\Http\Controllers\UsersManagementController;
 use App\Http\Controllers\TaskPageController;
 use App\Http\Controllers\CompletionPageController;
 use App\Http\Controllers\PeriodPageController;
+use App\Http\Controllers\DashboardPageController;
 
 
 
@@ -80,3 +81,5 @@ Route::delete('/periods/{id}', [PeriodPageController::class, 'destroy'])->name('
 Route::post('/periods/{id}/set-active', [App\Http\Controllers\PeriodPageController::class, 'setActive'])
     ->name('periods.setActive');
 
+
+Route::get('/dashboard', [DashboardPageController::class, 'index'])->name('dashboard');

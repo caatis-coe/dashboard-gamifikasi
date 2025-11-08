@@ -4,7 +4,9 @@
 <div class="min-h-screen flex items-center justify-center bg-white">
     <div class="w-full max-w-md px-6">
 
-        <h2 class="text-4xl font-semibold text-gray-800 text-center mb-6">Hello, welcome!</h2>
+        <div class="text-center mb-6">
+            <img src="{{ asset('images/logo web.png') }}" alt="Hello, welcome!" class="mx-auto w-64 h-64 object-contain">
+        </div>
 
         <form action="{{ route('login') }}" method="POST" class="space-y-4">
             @csrf
@@ -41,13 +43,13 @@
             @enderror
 
             {{-- Forgot Password --}}
-            <div class="text-sm">
+            <!-- <div class="text-sm">
                 <a class="text-green-600 hover:underline float-right">Forgot your password?</a><br>
-            </div>
+            </div> -->
 
             {{-- Submit --}}
             <button type="submit"
-                class="w-full bg-lime-600 text-white py-2 px-4 rounded-lg hover:bg-lime-700 transition duration-200">
+                class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200">
                 Login
             </button>
             
