@@ -41,7 +41,7 @@ Route::get('/', function () {
 Route::get('/users', [UsersManagementController::class, 'index'])->name('users.list');
 Route::get('/users/create', [UsersManagementController::class, 'create'])->name('users.create');
 Route::post('/users', [UsersManagementController::class, 'store'])->name('users.store');
-Route::delete('/users/{id}', [UsersManagementController::class, 'delete'])->name('users.delete');
+Route::delete('/users/{id}', [UsersManagementController::class, 'destroyUser'])->name('users.delete');
 Route::get('/users/{id}/edit', [UsersManagementController::class, 'edit'])->name('users.edit');
 Route::put('/users/{id}', [UsersManagementController::class, 'update'])->name('users.update');
 

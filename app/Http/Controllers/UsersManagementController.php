@@ -39,17 +39,20 @@ class UsersManagementController extends ApiController
         return view('Users.users', compact('users'));
     }
 
-    public function destroy($id)
-    {
-        $token = session('api_token');
-        $response = $this->delete("/api/users/{$id}", $token);
+   public function destroyUser($id)
+{
+    $token = session('api_token');
 
-        if ($response->failed()) {
-            return back()->withErrors(['error' => 'Failed to delete user.']);
-        }
+    // Use the protected helper to call the API
+    $response = $this->delete("/api/users/{$id}", $token);
 
-        return redirect()->back()->with('success', 'User deleted successfully.');
+    if ($response->failed()) {
+        return back()->withErrors(['error' => 'Failed to delete user.']);
     }
+
+    return redirect()->route('users.list')->with('success', 'User deleted successfully.');
+}
+
 
     public function create()
     {
